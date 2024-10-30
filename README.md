@@ -102,7 +102,7 @@ graph TB
 
 ### Team-Specific Approaches
 
-1. **Small Team (10MB)**
+1. **Small Team (10MB):Simple, direct migration**
 ```python
 class SmallTeamStrategy(MigrationStrategy):
     def execute(self):
@@ -119,7 +119,7 @@ class SmallTeamStrategy(MigrationStrategy):
                     self.error_handler.handle(e, package)
 ```
 
-2. **Medium Team (10GB)**
+2. **Medium Team (10GB): Parallel processing with chunking**
 ```python
 class MediumTeamStrategy(MigrationStrategy):
     def execute(self):
@@ -131,7 +131,7 @@ class MediumTeamStrategy(MigrationStrategy):
             self.monitor.track_futures(futures)
 ```
 
-3. **Large Team (1TB)**
+3. **Large Team (1TB): Distributed processing with streaming**
 ```python
 class LargeTeamStrategy(MigrationStrategy):
     def execute(self):
@@ -145,7 +145,7 @@ class LargeTeamStrategy(MigrationStrategy):
 
 ### Security Implementation
 
-1. **Authentication**
+1. **Authentication: Pre-Signed URL**
 ```python
 class SecurityManager:
     def setup_secure_connection(self):
@@ -160,7 +160,7 @@ class SecurityManager:
         )
 ```
 
-2. **Encryption**
+2. **Encryption: TLSv1.3**
 ```python
 class EncryptionManager:
     def encrypt_in_transit(self, data):
